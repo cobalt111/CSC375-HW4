@@ -1,4 +1,5 @@
 #include "Facebook.h"
+#include "Queue.h"
 #include <sstream>
 #include <string>
 #include <iostream>
@@ -10,13 +11,43 @@
 //their home states in the file attached. This implies that it should work with
 //Queue<Profile> that we defined in earlier assignments.
 //Additionally, your main program should satisfy the following conditions:
-
 using namespace std;
 
 int main() {
 
 
 	// TODO test queue class
+
+	Queue<Profile> myQueue;
+
+	Profile profile;
+	Profile anotherProfile;
+	Profile placeholder;
+
+	profile.user = "Tim";
+	profile.state = "MI";
+
+	anotherProfile.user = "Hannibal";
+	anotherProfile.state = "MO";
+
+	myQueue.enqueue(profile);
+
+	myQueue.print();
+
+	myQueue.dequeue(placeholder);
+
+	myQueue.print();
+
+	myQueue.isEmpty();
+
+	myQueue.enqueue(anotherProfile);
+
+	myQueue.enqueue(profile);
+
+	myQueue.reversePrint();
+
+
+
 
 
 

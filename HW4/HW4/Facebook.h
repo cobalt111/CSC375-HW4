@@ -46,15 +46,14 @@
 //array!)
 
 
-
 // Uses the struct Profile made in earlier assignments
 struct Profile {
-	string user;
-	string state;
+	std::string user;
+	std::string state;
 
 	// overloaded operator for printing out the contents of info
-	friend ostream& operator << (ostream& os, Profile profile) {
-		os << endl << profile.user << endl << profile.state;
+	friend std::ostream& operator << (std::ostream& os, Profile profile) {
+		os << std::endl << profile.user << std::endl << profile.state;
 		return os;
 	}
 };
