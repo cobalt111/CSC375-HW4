@@ -233,13 +233,13 @@ inline void Queue<DataType>::reversePrint()
 
 		// loop to print nodes
 		while (current->previous != NULL) {
-			std::cout << current->info << std::endl << std::endl;
+			std::cout << current->info << std::endl;
 			// once printed, move current to the previous node
 			current = current->previous;
 		}
 
 		// when there isn't a "previous" left, print the first node
-		std::cout << current->info << std::endl << std::endl;
+		std::cout << current->info << std::endl;
 	}
 }
 

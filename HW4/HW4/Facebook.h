@@ -26,11 +26,11 @@ public:
 	~Facebook();
 	void addFriend(DataType newFriend);
 	void removeFriend();
-	void printFriendsF() const;
-	void printFriendsR() const;
-	DataType firstFriend() const;
+	void printFriendsF();
+	void printFriendsR();
+	DataType firstFriend();
 	void resetFriends();
-	bool checkList() const;
+	bool checkList();
 private:
 	int numFriends;
 	DataType user;
@@ -69,6 +69,9 @@ inline void Facebook<DataType>::addFriend(DataType newFriend)
 template<class DataType>
 inline void Facebook<DataType>::removeFriend()
 {
+	friendList.peek(placeholder);
+	std::cout << "Friend to be removed is: " << std::endl;
+	std::cout << placeholder << std::endl;
 	friendList.dequeue(placeholder);
 	numFriends--;
 }
@@ -76,7 +79,7 @@ inline void Facebook<DataType>::removeFriend()
 //3. printFriendsF(): this should trigger the print() function of Queue so that you can
 //print all the Friends from front to the end.
 template<class DataType>
-inline void Facebook<DataType>::printFriendsF() const
+inline void Facebook<DataType>::printFriendsF()
 {
 	friendList.print();
 }
@@ -84,7 +87,7 @@ inline void Facebook<DataType>::printFriendsF() const
 //4. printFriendsR(): this should trigger the reversePrint() function of Queue so that
 //you can print all the Friends from end to the front.
 template<class DataType>
-inline void Facebook<DataType>::printFriendsR() const
+inline void Facebook<DataType>::printFriendsR()
 {
 	friendList.reversePrint();
 }
@@ -92,9 +95,10 @@ inline void Facebook<DataType>::printFriendsR() const
 //5. firstFriend(): this should trigger the peek() function of Queue so that you can
 //print the Friend who was added first.
 template<class DataType>
-inline DataType Facebook<DataType>::firstFriend() const
+inline DataType Facebook<DataType>::firstFriend()
 {
-	return friendList.peek();
+	friendList.peek(placeholder);
+	return placeholder;
 }
 
 //6. resetFriends(): this should trigger the makeEmpty() function of Queue so that
@@ -109,7 +113,7 @@ inline void Facebook<DataType>::resetFriends()
 //7. checklist(): this should trigger the isEmpty() function of Queue to verify that your
 //list is empty.
 template<class DataType>
-inline bool Facebook<DataType>::checkList() const
+inline bool Facebook<DataType>::checkList()
 {
 	return friendList.isEmpty();
 }
