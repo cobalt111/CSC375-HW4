@@ -1,5 +1,4 @@
 #include "Facebook.h"
-#include "Queue.h"
 #include <sstream>
 #include <string>
 #include <iostream>
@@ -16,9 +15,6 @@ using namespace std;
 int main() {
 
 	cout << "Main program starting..." << endl;
-	// TODO finish main
-
-
 
 
 	//1.As you read the presidents and their home states from the file, your addFriend()
