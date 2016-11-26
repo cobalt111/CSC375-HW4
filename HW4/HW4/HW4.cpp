@@ -16,54 +16,7 @@ using namespace std;
 int main() {
 
 
-	// TODO test queue class
-
-	Queue<Profile> myQueue;
-
-	Profile profile;
-	Profile anotherProfile;
-	Profile placeholder;
-
-	profile.user = "Tim";
-	profile.state = "MI";
-
-	anotherProfile.user = "Hannibal";
-	anotherProfile.state = "MO";
-
-	myQueue.enqueue(profile);
-
-	myQueue.print();
-
-	myQueue.dequeue(placeholder);
-
-	myQueue.print();
-
-	myQueue.isEmpty();
-
-	myQueue.enqueue(anotherProfile);
-
-	myQueue.enqueue(profile);
-
-	myQueue.reversePrint();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	// TODO finish main
 
 
 
@@ -128,3 +81,42 @@ int main() {
 
 	return 0;
 }
+
+
+
+
+
+// this is debug code
+
+
+
+
+
+
+//Queue<Profile> myQueue;
+//
+//Profile profile;
+//Profile anotherProfile;
+//Profile placeholder;
+//
+//profile.user = "Tim";
+//profile.state = "MI";
+//
+//anotherProfile.user = "Hannibal";
+//anotherProfile.state = "MO";
+//
+//myQueue.enqueue(profile);
+//
+//myQueue.print();
+//
+//myQueue.dequeue(placeholder);
+//
+//myQueue.print();
+//
+//myQueue.isEmpty();
+//
+//myQueue.enqueue(anotherProfile);
+//
+//myQueue.enqueue(profile);
+//
+//myQueue.reversePrint();

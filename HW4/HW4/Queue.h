@@ -150,12 +150,14 @@ inline bool Queue<DataType>::peek(DataType & frontElement)
 {
 	// early exit if list is empty
 	if (front == back) return false;
+	else {
 
-	// put data in front node in frontElement's location
-	frontElement = front->next->info;
+		// put data in front node in frontElement's location
+		frontElement = front->next->info;
 
-	// upon success
-	return true;
+		// upon success
+		return true;
+	}
 }
 
 // 3. isEmpty (checks whether the Queue is empty or not)
@@ -206,13 +208,13 @@ inline void Queue<DataType>::print()
 
 		// loop to print nodes
 		while (current != back) {
-			std::cout << current->info << std::endl << std::endl;
+			std::cout << current->info << std::endl;
 			// once printed, move current to the next node
 			current = current->next;
 		}
 
 		// when there isn't a "next" left, print the last node
-		std::cout << current->info << std::endl << std::endl;
+		std::cout << current->info << std::endl;
 	}
 }
 
