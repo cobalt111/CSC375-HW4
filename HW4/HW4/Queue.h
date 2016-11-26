@@ -119,7 +119,7 @@ inline void Queue<DataType>::enqueue(const DataType & element)
 
 // 2. dequeue (removes the front element and provides content)
 template<class DataType>
-inline DataType Queue<DataType>::dequeue(DataType & deqElement)
+inline bool Queue<DataType>::dequeue(DataType & deqElement)
 {
 	// early exit if the queue is empty
 	if (front == back) {
