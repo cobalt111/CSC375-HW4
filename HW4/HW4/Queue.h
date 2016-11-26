@@ -118,7 +118,8 @@ inline bool Queue<DataType>::dequeue(DataType & deqElement)
 	// early exit if the queue is empty
 	if (front == back)
 		return false;
-	else {
+	else 
+	{
 		// create pointer prepare for node deletion;
 		Node<DataType> *ptr = front->next;
 
@@ -150,8 +151,8 @@ inline bool Queue<DataType>::peek(DataType & frontElement)
 {
 	// early exit if list is empty
 	if (front == back) return false;
-	else {
-
+	else 
+	{
 		// put data in front node in frontElement's location
 		frontElement = front->next->info;
 
@@ -180,7 +181,8 @@ inline void Queue<DataType>::makeEmpty()
 	else
 	{	
 		// loop to delete nodes
-		do {
+		do 
+		{
 			// temp pointer to delete nodes with
 			Node<DataType> *ptr = back;
 
@@ -189,7 +191,8 @@ inline void Queue<DataType>::makeEmpty()
 
 			// delete the last node
 			delete ptr;
-		} while (back != &header); // while there are still nodes before back
+		} 
+		while (back != &header); // while there are still nodes before back
 	}
 }
 
@@ -201,13 +204,14 @@ inline void Queue<DataType>::print()
 	if (front == back)
 		std::cout << "The list is empty." << std::endl;
 
-	else {
-
+	else 
+	{
 		// set current to the first node
 		current = front->next;
 
 		// loop to print nodes
-		while (current != back) {
+		while (current != back) 
+		{
 			std::cout << current->info << std::endl;
 			// once printed, move current to the next node
 			current = current->next;
@@ -227,12 +231,14 @@ inline void Queue<DataType>::reversePrint()
 	if (front == back)
 		std::cout << "The list is empty." << std::endl;
 
-	else {
+	else 
+	{
 		// set current to the last node
 		current = back;
 
 		// loop to print nodes
-		while (current->previous != NULL) {
+		while (current->previous != NULL) 
+		{
 			std::cout << current->info << std::endl;
 			// once printed, move current to the previous node
 			current = current->previous;
