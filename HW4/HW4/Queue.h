@@ -4,13 +4,11 @@
 
 #pragma once
 
+#include <iostream>
+
 //Queue Class:
 //Write a Queue class using doubly-linked structure and implement the following
 //functionalities.
-
-
-
-
 
 
 // changed the Node struct to handle doubly linked functions
@@ -45,8 +43,8 @@ public:
 	void makeEmpty( );
 
 	// added these two functions to queue.h
-	void print();
-	void reversePrint();
+	void print() const;
+	void reversePrint() const;
 private:
 	Node<DataType> *front;
 	Node<DataType> *back;
@@ -147,14 +145,22 @@ inline bool Queue<DataType>::dequeue(DataType & deqElement)
 template<class DataType>
 inline bool Queue<DataType>::peek(DataType & frontElement)
 {
-	return false;
+	// early exit if list is empty
+	if (front == back) return false;
+
+	// put data in front node in frontElement's location
+	frontElement = front->next->info;
+
+	// upon success
+	return true;
 }
 
 // 3. isEmpty (checks whether the Queue is empty or not)
 template<class DataType>
 inline bool Queue<DataType>::isEmpty() const
 {
-	return false;
+	if (front == back) return true;
+	else return false;
 }
 
 
@@ -162,22 +168,78 @@ inline bool Queue<DataType>::isEmpty() const
 template<class DataType>
 inline void Queue<DataType>::makeEmpty()
 {
+	// early exit if the list is already empty
+	if (front == back)
+		std::cout << "The list is already empty.\n" << std::endl;
+
+	else
+	{	
+		// loop to delete nodes
+		do {
+			// temp pointer to delete nodes with
+			Node<DataType> *ptr = back;
+
+			// set the last node to the next-to-last
+			back = back->previous;
+
+			// delete the last node
+			delete *ptr
+		} while (back->previous != NULL); // while there are still nodes before back
+	}
 }
 
 // 6. print (prints all the elements from front to the end)
 template<class DataType>
-inline void Queue<DataType>::print()
+inline void Queue<DataType>::print() const
 {
+	// early exit if the list is already empty
+	if (front == back)
+		std::cout << "The list is empty.\n" << std::endl;
+
+	else {
+
+		// set current to the first node
+		current = front->next;
+
+		// loop to print nodes
+		while (current->next != NULL) {
+			std::cout << current->info << std::endl << std::endl;
+			// once printed, move current to the next node
+			current = current->next;
+		}
+
+		// when there isn't a "next" left, print the last node
+		std::cout << current->info << std::endl << std::endl;
+	}
 }
 
 // 7. reversePrint(prints all the elements from end to the front with the help of back
 // pointers inside your nodes)
 template<class DataType>
-inline void Queue<DataType>::reversePrint()
+inline void Queue<DataType>::reversePrint() const
 {
+	// early exit if the list is already empty
+	if (front == back)
+		std::cout << "The list is empty.\n" << std::endl;
+
+	else {
+		// set current to the last node
+		current = back;
+
+		// loop to print nodes
+		while (current->previous != NULL) {
+			std::cout << current->info << std::endl << std::endl;
+			// once printed, move current to the previous node
+			current = current->previous;
+		}
+
+		// when there isn't a "previous" left, print the first node
+		std::cout << current->info << std::endl << std::endl;
+	}
 }
 
 template<class DataType>
 inline void Queue<DataType>::deepCopy(const Queue<DataType>& original)
 {
+	// TODO make deepCopy function
 }

@@ -15,35 +15,57 @@ using namespace std;
 
 int main() {
 
-	//1.As you read the presidents and their home states from the file, your addFriend()
-	//function should enqueue them into the Friendlist. All presidents become
-	//Friends.
 
-	// Instagram object using Stack<Profile> to create a linked list
-	Facebook<Profile> facebook;
-	// placeholder profile
-	Profile tempProfile;
+	// TODO test queue class
 
 
 
-	// reading from file
-	ifstream inThisFile("presidentsWstates.txt");
-	// placeholder string
-	string currentString;
 
 
-	// loop to populate the friends list. All presidents become enqueued in the list
-	cout << "Adding followers to list..." << endl;
-	if (inThisFile.is_open())
-	{
-		while (getline(inThisFile, currentString))
-		{
-			stringstream ss(currentString);
-			getline(ss, tempProfile.user, '\t');
-			getline(ss, tempProfile.state, '\t');
-			facebook.addFriend(tempProfile);
-		}
-	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	////1.As you read the presidents and their home states from the file, your addFriend()
+	////function should enqueue them into the Friendlist. All presidents become
+	////Friends.
+
+	//// Instagram object using Stack<Profile> to create a linked list
+	//Facebook<Profile> facebook;
+	//// placeholder profile
+	//Profile tempProfile;
+
+
+
+	//// reading from file
+	//ifstream inThisFile("presidentsWstates.txt");
+	//// placeholder string
+	//string currentString;
+
+
+	//// loop to populate the friends list. All presidents become enqueued in the list
+	//cout << "Adding followers to list..." << endl;
+	//if (inThisFile.is_open())
+	//{
+	//	while (getline(inThisFile, currentString))
+	//	{
+	//		stringstream ss(currentString);
+	//		getline(ss, tempProfile.user, '\t');
+	//		getline(ss, tempProfile.state, '\t');
+	//		facebook.addFriend(tempProfile);
+	//	}
+	//}
 
 
 

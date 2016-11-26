@@ -47,10 +47,6 @@
 
 
 
-
-
-
-
 // Uses the struct Profile made in earlier assignments
 struct Profile {
 	string user;
