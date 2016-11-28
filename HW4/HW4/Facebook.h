@@ -25,17 +25,15 @@ public:
 	Facebook();
 	~Facebook();
 	void addFriend(DataType newFriend);
-	void removeFriend();
+	void removeFriend(DataType & removedFriend);
 	void printFriendsF();
 	void printFriendsR();
-	DataType firstFriend();
+	DataType firstFriend(DataType & friendOne);
 	void resetFriends();
 	bool checkList();
 private:
 	int numFriends;
 	DataType user;
-	//TODO figure out what do with placeholder
-	DataType placeholder;
 	Queue<DataType> friendList;
 };
 
@@ -67,12 +65,10 @@ inline void Facebook<DataType>::addFriend(DataType newFriend)
 //Friend at the front should be removed from the list and his/her name should be
 //provided.
 template<class DataType>
-inline void Facebook<DataType>::removeFriend()
+inline void Facebook<DataType>::removeFriend(DataType & removedFriend)
 {
-	friendList.peek(placeholder);
-	std::cout << "Friend to be removed is: " << std::endl;
-	std::cout << placeholder << std::endl;
-	friendList.dequeue(placeholder);
+	friendList.peek(removedFriend);
+	friendList.dequeue(removedFriend);
 	numFriends--;
 }
 
@@ -95,10 +91,10 @@ inline void Facebook<DataType>::printFriendsR()
 //5. firstFriend(): this should trigger the peek() function of Queue so that you can
 //print the Friend who was added first.
 template<class DataType>
-inline DataType Facebook<DataType>::firstFriend()
+inline DataType Facebook<DataType>::firstFriend(DataType & friendOne)
 {
-	friendList.peek(placeholder);
-	return placeholder;
+	friendList.peek(friendOne);
+	return friendOne;
 }
 
 //6. resetFriends(): this should trigger the makeEmpty() function of Queue so that
