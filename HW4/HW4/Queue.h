@@ -237,7 +237,8 @@ inline void Queue<DataType>::reversePrint()
 		current = back;
 
 		// loop to print nodes
-		while (current->previous != NULL) 
+		// while (current->previous != NULL) - this loop has the runtime error problem, switched with this
+		while (current != front)
 		{
 			std::cout << current->info << std::endl;
 			// once printed, move current to the previous node
