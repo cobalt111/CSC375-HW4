@@ -121,7 +121,6 @@ inline bool Queue<DataType>::dequeue(DataType & deqElement)
 	else 
 	{
 		// create pointer to prepare for node deletion;
-		
 		Node<DataType> *ptr = front->next;
 
 		// put ptr->info into location deqElement
