@@ -21,7 +21,7 @@ int main() {
 	//function should enqueue them into the Friendlist. All presidents become
 	//Friends.
 
-	// Instagram object using Stack<Profile> to create a linked list
+	// Facebook object using Queue<Profile> to create a doubly linked list
 	Facebook<Profile> facebook;
 	// placeholder profile
 	Profile tempProfile;
