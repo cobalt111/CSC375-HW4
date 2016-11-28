@@ -51,7 +51,7 @@ int main() {
 	//2.Call firstFriend() function to see the earliest president name and state (It should
 	//be George Washington, VA) and print it on the screen.
 	cout << endl << "The first friend is: " << endl;
-	cout << facebook.firstFriend() << endl;
+	cout << facebook.firstFriend(tempProfile) << endl;
 
 
 
@@ -59,18 +59,19 @@ int main() {
 	//removed president. (we need to see George Washington, VA on the screen
 	//again)
 	cout << endl << "Removing first queued friend..." << endl;
-	facebook.removeFriend();
+	facebook.removeFriend(tempProfile);
+	cout << "The removed friend is: " << endl << tempProfile << endl;
 
 
 
 
 	//4.Call printFriendsF() to display all the names with their states (You can use your
 	//earlier print function)
-	cout << endl << "Printing friends list from earliest to latest..." << endl;
+	cout << endl << "Printing friends list from first to last..." << endl;
 	facebook.printFriendsF();
 
 	//5.Call printFriendsR()to display all the names with their states in reverse order.
-	cout << endl << "Printing friends list from latest to earliest..." << endl;
+	cout << endl << "Printing friends list from last to first..." << endl;
 	facebook.printFriendsR();
 
 
