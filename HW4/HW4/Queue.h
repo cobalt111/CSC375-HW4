@@ -98,10 +98,10 @@ inline void Queue<DataType>::enqueue(const DataType & element)
 	// place element's data in the new node
 	ptr->info = element;
 
-	// point the back node's next towards the new pointer made
+	// point the back-node's next towards the new node
 	back->next = ptr;
 	
-	// set previous to the node before it
+	// set ptr->previous to the node before it
 	ptr->previous = back;
 
 	// move the back pointer so that it points to the end node
@@ -121,6 +121,7 @@ inline bool Queue<DataType>::dequeue(DataType & deqElement)
 	else 
 	{
 		// create pointer to prepare for node deletion;
+		
 		Node<DataType> *ptr = front->next;
 
 		// put ptr->info into location deqElement
