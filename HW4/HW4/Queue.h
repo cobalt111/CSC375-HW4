@@ -245,8 +245,9 @@ inline void Queue<DataType>::reversePrint()
 			current = current->previous;
 		}
 
+		// the two lines below aren't necessary anymore
 		// when there isn't a "previous" left, print the first node
-		std::cout << current->info << std::endl;
+		// std::cout << current->info << std::endl;
 	}
 }
 
